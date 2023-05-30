@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('products', ProductController::class)
     ->only('index', 'show');
 
-Route::group(['middleware' => 'jwt.auth'], function (){
+Route::group(['middleware' => 'jwt.auth'], function () {
     Route::apiResource('products', ProductController::class)
         ->only('store', 'update');
 });
